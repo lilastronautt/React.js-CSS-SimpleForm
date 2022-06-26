@@ -1,0 +1,81 @@
+.form-container {
+  width: 50rem;
+  max-width: 90%;
+  background: rgb(111, 63, 148);
+  margin: 5rem auto;
+  padding: 1rem 2rem;
+  color: white;
+}
+
+.form-inputs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-input label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  padding: 0.4rem;
+  width: 18rem;
+  border-radius: 12px;
+  border: 2px solid white;
+}
+
+.error {
+  border: 2px solid rgb(200, 51, 51);
+  background-color: rgb(208, 162, 162);
+}
+
+.form-input input:focus {
+  outline: none;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.form-actions button {
+  background-color: #40005d;
+  color: white;
+  padding: 0.5rem 2.5rem;
+  border-radius: 12px;
+  border: 2px solid #40005d;
+}
+
+.form-actions button:hover {
+  color: #40005d;
+  background-color: white;
+  cursor: pointer;
+}
+
+.form-container button {
+  background-color: #40005d;
+  color: white;
+  padding: 0.5rem 2.5rem;
+  border-radius: 12px;
+  border: 2px solid #40005d;
+}
+
+.form-container button:hover {
+  color: #40005d;
+  background-color: white;
+  cursor: pointer;
+}
+
+.form-actions button:disabled {
+  background-color: rgb(134, 96, 164);
+  cursor: not-allowed;
+  border: 2px solid rgb(134, 96, 164);
+}
+.form-actions button:disabled:hover {
+  color: white;
+}
+
+h5 {
+  color: rgb(189, 116, 116);
+  margin: 0.3rem 0 0 0.5rem;
+}
