@@ -1,14 +1,18 @@
 import "./SimpleForm.css";
 import Card from "../UI/Card";
 import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { formActions } from "../store/index";
 
-const SimpleForm = (props) => {
+const SimpleForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [content, setContent] = useState(false);
   const [onTouch, setOnTouch] = useState(false);
   const [inputBlur, setInputBlur] = useState(false);
   const [formState, setFormState] = useState(false);
+
+  const content = useSelector((state) => state.content);
+  const dispatch = useDispatch();
 
   let nameIsInvalid = name.trim() === "";
   let emailIsInvalid = !email.trim().includes("@");
@@ -28,7 +32,7 @@ const SimpleForm = (props) => {
   };
 
   const onAddDataClick = () => {
-    setContent((prevState) => !prevState);
+    dispatch(formActions.toggle());
   };
 
   const inputBlurHandler = () => {
@@ -48,7 +52,9 @@ const SimpleForm = (props) => {
       return;
     }
 
-    props.onSaveForm({ id: Math.random(), name: name, email: email });
+    dispatch(
+      formActions.saveForm({ id: Math.random(), name: name, email: email })
+    );
     setName("");
     setEmail("");
     setOnTouch(false);
