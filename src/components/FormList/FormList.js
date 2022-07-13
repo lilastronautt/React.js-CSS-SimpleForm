@@ -1,13 +1,17 @@
 import "./FormList.css";
 
 import Card from "../UI/Card";
+import { useSelector, useDispatch } from "react-redux";
+import { formActions } from "../store/index";
 
-const FormList = (props) => {
+const FormList = () => {
+  const data = useSelector((state) => state.data);
+  const dispatch = useDispatch();
   return (
     <>
-      {props.data.map((item) => {
+      {data.map((item) => {
         const onClickHandler = () => {
-          props.delete(item.id);
+          dispatch(formActions.deleteEntry(item.id));
         };
         return (
           <ul key={item.id}>
